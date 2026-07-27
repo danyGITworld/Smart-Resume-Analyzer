@@ -24,6 +24,4 @@ This repo has two versions of the same core logic:
 4. **Smart Feedback System** — plain-language improvement suggestions
 5. **Dashboard** — score breakdown chart + ATS keyword match chart
 
-Kept intentionally simple: plain Python, `re` for pattern matching, `pdfplumber` /
-`python-docx` for file reading, `matplotlib` for charts. No deep learning, no
-external AI APIs, no heavy NLP libraries — matching the assignment's scope limits.
+
