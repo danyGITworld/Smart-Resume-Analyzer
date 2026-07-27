@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="card">
+    <h2>Upload your resume</h2>
+    <form action="{{ url_for('analyze') }}" method="post" enctype="multipart/form-data">
+      <label for="resume">Resume file (PDF or DOCX, max 5MB)</label>
+      <input type="file" name="resume" id="resume" accept=".pdf,.docx" required />
+
+      <label for="role">Target job role</label>
+      <select name="role" id="role" required>
+        {% for r in roles %}
+          <option value="{{ r }}">{{ r }}</option>
+        {% endfor %}
+      </select>
+
+      <button type="submit">Analyze Resume</button>
+    </form>
+  </div>
+{% endblock %}

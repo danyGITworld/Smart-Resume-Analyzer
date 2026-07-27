@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="card">
+    <h2>Report for {{ filename }}</h2>
+    <p><strong>Target Role:</strong> {{ role }}</p>
+    <p><strong>Resume Score:</strong> {{ score }} / 100</p>
+    <p><strong>ATS Compatibility:</strong> {{ ats_score }}%</p>
+  </div>
+
+  <div class="charts">
+    <div class="card">
+      <img src="data:image/png;base64,{{ score_chart }}" alt="Resume score breakdown chart" />
+    </div>
+    <div class="card">
+      <img src="data:image/png;base64,{{ ats_chart }}" alt="ATS keyword match chart" />
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Score Breakdown</h3>
+    <ul>
+      {% for k, v in breakdown.items() %}
+        <li>{{ k }}: {{ v }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Keywords</h3>
+    <p><strong>Matched ({{ matched|length }}):</strong> {{ matched|join(', ') if matched else 'None' }}</p>
+    <p><strong>Missing ({{ missing|length }}):</strong> {{ missing|join(', ') if missing else 'None' }}</p>
+  </div>
+
+  <div class="card">
+    <h3>Improvement Suggestions</h3>
+    <ol>
+      {% for tip in feedback %}
+        <li>{{ tip }}</li>
+      {% endfor %}
+    </ol>
+  </div>
+
+  <a class="button-link" href="{{ url_for('index') }}">Analyze another resume</a>
+{% endblock %}
