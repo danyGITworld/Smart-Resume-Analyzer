@@ -30,29 +30,8 @@ Then open http://127.0.0.1:5000 in your browser.
 7. Once live, Render gives you a URL like `https://smart-resume-analyzer.onrender.com`
    - **this is your deployment link** for the assignment.
 
-Note: Render's free tier spins down after ~15 min of inactivity and takes
-~30-50 seconds to wake up on the next request - normal for a free-tier demo,
-not a bug.
-
-## Project structure
-
-```
-resume-analyzer-flask/
-├── app.py                 # Flask app - routes + all analysis logic
-├── templates/
-│   ├── base.html
-│   ├── index.html         # upload form
-│   └── result.html        # report + charts
-├── static/
-│   └── style.css
-├── requirements.txt
-├── Procfile                # tells Render how to start the app
-├── render.yaml              # Render blueprint config
-└── .gitignore
-```
 
 ## Scope
 
 Same rule-based approach as the notebook version - plain regex/keyword
-matching, no deep learning or external AI APIs, matching the assignment's
-stated scope limits.
+matching, no deep learning or external AI APIs.
