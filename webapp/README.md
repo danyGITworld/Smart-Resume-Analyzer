@@ -27,8 +27,8 @@ Then open http://127.0.0.1:5000 in your browser.
    - **Start Command:** `gunicorn app:app`
    - **Plan:** Free
 6. Click **Create Web Service**. First deploy takes a few minutes.
-7. Once live, Render gives you a URL like `https://smart-resume-analyzer.onrender.com`
-   - **this is your deployment link** for the assignment.
+
+   
 
 
 ## Scope
